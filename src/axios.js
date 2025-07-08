@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const makeRequest = axios.create({
-  baseURL: "https://whispr-backend.vercel.app/api",
+  baseURL: import.meta.env.VITE_API_URL,
   withCredentials: true, // This is important for sending cookies
 });
