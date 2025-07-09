@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { makeRequest } from "../../axios";
 
 const Register=()=>{
 
@@ -23,7 +23,7 @@ const Register=()=>{
   const handleClick = async (e) => {
     e.preventDefault();   
     try {
-      await axios.post("http://localhost:3000/api/auth/register", inputs);
+      await makeRequest.post("/auth/register", inputs);
       navigate("/");
     }catch (err) {
       setErr(err.response.data);
