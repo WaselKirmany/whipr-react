@@ -16,8 +16,8 @@ import "./style.scss";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
-  const { currentUser } = useContext(AuthContext);
-
+  // const { currentUser } = useContext(AuthContext);
+  const { currentUser } = false; // Simulating no user for testing purposes
   useEffect(() => {
     document.body.className = darkMode ? "theme-dark" : "theme-light";
   }, [darkMode]);

@@ -48,8 +48,8 @@ const Login=()=>{
                 <div className="right">
                     <h1>Login to Your Account</h1>
                     <form>
-                        <input type="text" placeholder="Username" name="username" onChange={handleChange}/>
-                        <input type="password" placeholder="Password" name="password" onChange={handleChange}/>
+                        <input type="text" placeholder="Username" name="username" autoComplete="username" onChange={handleChange}/>
+                        <input type="password" placeholder="Password" name="password" autoComplete="current-password" onChange={handleChange}/>
                         {err && <p className="error">{err}</p>}
                         <button onClick={handleLogin}>Login</button>
                     </form>
