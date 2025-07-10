@@ -12,6 +12,7 @@ export const AuthContextProvider = ({ children }) => {
 const login = async (inputs) => {
   try {
     const res = await makeRequest.post("/auth/login", inputs);
+    localStorage.setItem("accessToken", res.data.token);
     setCurrentUser(res.data); // Must update context
   } catch (err) {
     throw err;

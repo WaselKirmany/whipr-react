@@ -15,7 +15,7 @@ export const makeRequest = axios.create({
 // Add a request interceptor to attach token from localStorage
 makeRequest.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token"); // Get JWT from localStorage
+    const token = localStorage.getItem("accessToken"); // Get JWT from localStorage
     if (token) {
       config.headers.Authorization = `Bearer ${token}`; // Add Bearer token to headers
     }
