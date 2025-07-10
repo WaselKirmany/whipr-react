@@ -56,7 +56,7 @@ const Comment = () => {
 const { data: liked, refetch: refetchLiked } = useQuery({
   queryKey: ["liked", id, currentUser?.id],
   queryFn: async () => {
-    const res = await makeRequest.get(`/likes/check?postId=${id}`);
+    const res = await makeRequest.get(`/likes?postId=${id}`);
     return res.data;
   },
   enabled: !!currentUser,
